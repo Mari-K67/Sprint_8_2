@@ -1,26 +1,3 @@
-# import pytest
-# import api_requests
-# from faker import Faker
-# fake = Faker()
-
-
-# @pytest.fixture
-# def create_user():
-#     body = {
-#         "email": fake.unique.email(),
-#         "password": fake.password(),
-#         "name": fake.name()
-#     }
-#     response = api_requests.create_user(body)
-#     assert response.status_code == 200, response.text
-#     response_data = response.json()
-
-#     yield body, response_data, response.status_code
-
-#     access_token = response_data.get("accessToken")
-#     if access_token:
-#         api_requests.delete_user(access_token)
-
 import pytest
 import api_requests
 import helpers
