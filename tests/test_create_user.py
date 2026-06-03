@@ -1,6 +1,6 @@
 import pytest
 import allure
-import api_requests
+from api_requests import UserApi
 from data import AnswerMessage
 
 class TestCreateUser:
@@ -14,10 +14,10 @@ class TestCreateUser:
     @allure.title('Создание пользователя, который уже зарегистрирован')
     def test_create_user_twice(self, create_user):
         user_body= create_user[0]
-        response_2 = api_requests.create_user(user_body)
+        response_2 = UserApi.create_user(user_body)
         assert response_2.status_code == 403
         assert response_2.json()['success'] == False
-        assert AnswerMessage.exist_user_answer_403 in response_2.text
+        assert AnswerMessage.EXIST_USER_ANSWER_403 in response_2.text
 
     @allure.title('Создание пользователя c не заполненым одним из обязательных полей')
     @pytest.mark.parametrize("empty_key", [
@@ -28,8 +28,8 @@ class TestCreateUser:
     def test_create_user_without_1_field(self, create_user, empty_key):
         user_body = create_user[0].copy()
         user_body[empty_key] = ''
-        response = api_requests.create_user(user_body)
+        response = UserApi.create_user(user_body)
         assert response.status_code == 403
         assert response.json()['success'] == False
-        assert AnswerMessage.user_without_1_field_403 in response.text
+        assert AnswerMessage.USER_WITHOUT_1_FIELD_403 in response.text
     

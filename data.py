@@ -2,29 +2,29 @@ import random
 import string
 
 class Url:
-    main_url = 'https://stellarburgers.education-services.ru'
-    create_user_url = f'{main_url}/api/auth/register'
-    login_url = f'{main_url}/api/auth/login'
-    change_user_data_url = f'{main_url}/api/auth/user'
-    create_oder = f'{main_url}/api/orders'
-    get_user_oder_url = f'{main_url}/api/orders'
-    delete_user_url = f'{main_url}/api/auth/user'
+    MAIN_URL = 'https://stellarburgers.education-services.ru'
+    CREATE_USER_URL = f'{MAIN_URL}/api/auth/register'
+    LOGIN_URL = f'{MAIN_URL}/api/auth/login'
+    CHANGE_USER_DATA_URL = f'{MAIN_URL}/api/auth/user'
+    CREATE_ODER = f'{MAIN_URL}/api/orders'
+    GET_USER_ODER_URL = f'{MAIN_URL}/api/orders'
+    DELETE_USER_URL  = f'{MAIN_URL}/api/auth/user'
 
 class Body:
-    random_field = ''.join(random.choices(string.ascii_letters + string.digits, k=7))
-    user_body = {
-        "email": f'{random_field}@mail.ru',
-        "password": random_field,
-        "name": random_field
+    RANDOM_FIELD = ''.join(random.choices(string.ascii_letters + string.digits, k=7))
+    USER_BODY = {
+        "email": f'{RANDOM_FIELD}@mail.ru',
+        "password": RANDOM_FIELD,
+        "name": RANDOM_FIELD
     }
 
-    oder_body = {"ingredients": ["61c0c5a71d1f82001bdaaa6d","61c0c5a71d1f82001bdaaa6f"]}
-    oder_body_wrong = {"ingredients": ["wrong_ingredient"]}
+    ODER_BODY = {"ingredients": ["61c0c5a71d1f82001bdaaa6d","61c0c5a71d1f82001bdaaa6f"]}
+    ODER_BODY_WRONG = {"ingredients": ["wrong_ingredient"]}
 
 class AnswerMessage:
-    exist_user_answer_403 = 'User already exists'
-    user_without_1_field_403 = 'Email, password and name are required fields'
-    login_user_with_wrong_field_401 = 'email or password are incorrect'
-    change_user_data_401 = 'You should be authorised'
-    create_oder_without_ingredients_400 = 'Ingredient ids must be provided'
-    get_oder_without_avtirization_401 = 'You should be authorised'
+    EXIST_USER_ANSWER_403 = 'User already exists'
+    USER_WITHOUT_1_FIELD_403 = 'Email, password and name are required fields'
+    LOGIN_USER_WITH_WRONG_FIELD_401 = 'email or password are incorrect'
+    CHANGE_USER_DATA_401 = 'You should be authorised'
+    CREATE_ODER_WITHOUT_INGREDIENTS_400 = 'Ingredient ids must be provided'
+    GET_ODER_WITHOUT_AVTIRIZATION_401 = 'You should be authorised'
