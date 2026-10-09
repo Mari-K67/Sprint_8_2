@@ -1,17 +1,5 @@
 # Sprint_8
-Task 1: Unit tests.  
-Autotests to verify a program that helps order a burger in Stellar Burgers
-
-## What you need to do
-* Clone the [repository](https://github.com/Yandex-Practicum/qa-python-project) with code template.
-* Connect libraries: pytest, pytest-cov. 
-* Cover with tests the classes `Bun`, `Burger`, `Ingredient`, `Database`.
-* Use mocks and parametrization where needed.
-* Code coverage should not be lower than 70%.
-
----
-
-## Task 2: API
+Task 2: API
 Task: test the API endpoints for [Stellar Burgers](https://qa-stellarburgers.education-services.ru) ([API documentation](https://code.s3.yandex.net/qa-automation-engineer/python-full/diploma/api-Stelar_Burger_10.25.pdf?etag=3584917d935c90b69cb3ffaff58d4f34)).
 
 ## User creation:
